@@ -1,0 +1,21 @@
+[server]
+enableStaticServing = true
+
+[[theme.fontFaces]]
+family = "Inter-Regular"
+url = "app/static/Inter_24pt-Regular.ttf"
+style = "normal"
+weight = 400
+
+[[theme.fontFaces]]
+family = "Inter-Bold"
+url = "app/static/Inter_24pt-Bold.ttf"
+style = "normal"
+weight = 700
+
+[theme]
+base="dark"
+primaryColor="#1e8653"
+backgroundColor="#000000"
+secondaryBackgroundColor="#55b1d4"
+font="Inter-Regular"
