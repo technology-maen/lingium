@@ -1,28 +1,78 @@
 import streamlit as st
 
-# Apply custom styling for the page
-st.markdown(
-    """
+# Inject CSS styles and fade-up animation
+st.markdown("""
     <style>
-        button[title^=Exit]+div [data-testid=stImage]{
-            text-align: center;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
+    @keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(40px);
         }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-up {
+        animation: fadeUp 2s ease-out forwards;
+    }
+
+    .logo-bottom-left {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        z-index: 999;
+    }
+
+    .aqua-text {
+        font-size: 70px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .subtitle {
+        font-size: 22px;
+        text-align: center;
+        color: white;
+        margin-top: 10px;
+    }
+
+    .green {
+        color: #00A600; /* green */
+    }
+
+    .blue {
+        color: #1e90ff; /* blue */
+    }
+
+    .intro {
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        margin-top: 20px;
+        padding: 0 30px;
+    }
     </style>
-    """,
+""", unsafe_allow_html=True)
+
+# Title with green "Ling" and blue "ium"
+st.markdown("<div class='aqua-text fade-up'><span class='green'>Ling</span><span class='blue'>ium</span></div>", unsafe_allow_html=True)
+
+# Subtitle
+st.markdown("<div class='subtitle'>Connect with native speakers.</div>", unsafe_allow_html=True)
+
+# Logo
+st.markdown(
+    "<div class='logo-bottom-left'><img src='images/logo1.png' width='100'></div>",
     unsafe_allow_html=True
 )
 
-# Display the logo
-st.image('images/logo1.png', width=300)
-
-# Display the main heading
-st.markdown("<div style='font-size: 28pt;'>Connect with native speakers.<br/></div>", unsafe_allow_html=True)
-
-# Provide an introduction to the application
-st.markdown(
-    """Welcome to Lingium, your personalized language learning assistant! This project leverages machine learning to recommend the best Discord servers and resources tailored to your language learning goals. Whether you're preparing for certifications like IELTS or TOEFL, or simply looking to connect with native speakers, Lingium is here to guide you. Answer a few questions, and let our intelligent recommender system find the perfect match for your needs. Start your journey to mastering a new language today!"""
-)
+# Short welcome paragraph
+st.markdown("""
+<div class='intro'>
+Welcome to <span style='color:"#55b1d4";'>Ling</span><span style='color:"#42b47a";'>ium</span> — your smart language learning companion! 
+Answer a few quick questions, and we’ll connect you with the best Discord servers and resources to match your goals.
+</div>
+""", unsafe_allow_html=True)
